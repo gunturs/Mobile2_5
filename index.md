@@ -1,7 +1,7 @@
 # INPUT DATA PADA LIST VIEW MENGGUNAKAN ARRAY
 
 Listview merupakan objek atau Widget pada flutter yang dapat menampilkan data secara dynamis, baik dalam bentuk Teks, Angka, Gambar maupun Wiget, dalam contoh kita berikut akan ditampilkan data yang berasal dari Array mengingt pembelajaran kita secara Online yang hanya memakai satu Page
-Perhatikan Gabar berikut
+Perhatikan Gambar berikut
 
 
 
@@ -57,3 +57,22 @@ class _MyappState extends State<Myapp> {
   }
 }
 ```
+>## Langkah 2: Buat Contructor untuk Getter (Pengambilan Data)
+
+Letakkan program di bawah ini pada tempat deklarasi variabel
+```dart
+String nama = '';
+  String nim = '';
+  ambilData() {
+    setState(() {
+      nama = txtnama.text;
+      nim = txtnim.text;
+
+      data.add(ListTile(
+        leading: Icon(Icons.people),
+        title: Text('$nama'),
+        subtitle: Text("$nim"),
+      ));
+    });
+  }
+  ```
