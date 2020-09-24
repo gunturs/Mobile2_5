@@ -78,3 +78,21 @@ String nama = '';
     });
   }
   ```
+>## Langkah 3: Panggil Pada Design
+
+masukkan Array kedalam ListView
+```dart
+new Column(
+   children: data,
+  )
+  
+ 
+```
+Panggil Constructor
+```dart
+RaisedButton(
+    color: Colors.green,
+    child: Text("Tambah"),
+     onPressed: ambilData,
+),
+```
