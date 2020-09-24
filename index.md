@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+# INPUT DATA PADA LIST VIEW MENGGUNAKAN ARRAY
 
-You can use the [editor on GitHub](https://github.com/gunturs/Mobile2_5/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Listview merupakan objek atau Widget pada flutter yang dapat menampilkan data secara dynamis, baik dalam bentuk Teks, Angka, Gambar maupun Wiget, dalam contoh kita berikut akan ditampilkan data yang berasal dari Array mengingt pembelajaran kita secara Online yang hanya memakai satu Page
+Perhatikan Gabar berikut
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+>## Langkah 1: Buat Class yang menggunakan StatefulWidget
 
-```markdown
-Syntax highlighted code block
+```dart
+import 'package:flutter/material.dart';
 
-# Header 1
-## Header 2
-### Header 3
+void main() => runApp(Myapp());
 
-- Bulleted
-- List
+class Myapp extends StatefulWidget {
+  @override
+  _MyappState createState() => _MyappState();
+}
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+class _MyappState extends State<Myapp> {
+  final txtnama = TextEditingController();
+  final txtnim = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: new Scaffold(
+            appBar: new AppBar(title: Text("Belajar Pintar")),
+            body: new ListView(
+              children: <Widget>[
+                new Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      TextField(
+                        controller: txtnama,
+                        autocorrect: true,
+                        decoration: InputDecoration(hintText: 'Nama'),
+                      ),
+                      TextField(
+                        controller: txtnim,
+                        autocorrect: true,
+                        decoration: InputDecoration(hintText: 'Nim'),
+                      ),
+                      RaisedButton(
+                          color: Colors.green,
+                          child: Text("Tambah"),
+                          onPressed: null),
+                    ],
+                  ),
+                ),
+                new Column(
+                    // Isi List View
+                    )
+              ],
+            )));
+  }
+}
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gunturs/Mobile2_5/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
