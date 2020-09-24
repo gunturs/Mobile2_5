@@ -57,10 +57,12 @@ class _MyappState extends State<Myapp> {
   }
 }
 ```
->## Langkah 2: Buat Contructor untuk Getter (Pengambilan Data)
+>## Langkah 2: Buat Listview Contructor untuk Getter (Pengambilan Data)
 
 Letakkan program di bawah ini pada tempat deklarasi variabel
 ```dart
+List<Widget> data = [];
+
 String nama = '';
   String nim = '';
   ambilData() {
